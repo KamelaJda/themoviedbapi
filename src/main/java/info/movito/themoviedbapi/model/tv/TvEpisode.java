@@ -1,9 +1,7 @@
 package info.movito.themoviedbapi.model.tv;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import lombok.ToString;
 
-@ToString
 public class TvEpisode extends AbstractTvElement {
 
 
