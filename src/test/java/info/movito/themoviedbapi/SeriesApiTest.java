@@ -51,26 +51,6 @@ public class SeriesApiTest extends AbstractTmdbApiTest {
 
 
     @Test
-    public void getSeason() {
-        TvSeason result = tmdb.getTvSeasons().getSeason(BREAKING_BAD_SERIES_ID, 5, LANGUAGE_ENGLISH);
-
-        assertNotNull("No results found", result);
-        Assert.assertTrue("episode number does not match", result.getEpisodes().get(0).getEpisodeNumber() == 1);
-    }
-
-
-    @Test
-    public void getSeasonWithAppendedMethods() {
-        TvSeason result = tmdb.getTvSeasons().getSeason(BREAKING_BAD_SERIES_ID, 5, LANGUAGE_ENGLISH, TmdbTvSeasons.SeasonMethod.values());
-
-        assertNotNull("No results found", result);
-        Assert.assertTrue("episode number does not match", result.getEpisodes().get(0).getEpisodeNumber() == 1);
-
-        // todo add more asserts here that test the methods
-    }
-
-
-    @Test
     public void getEpisode() {
         TvEpisode episode = tmdb.getTvEpisodes().getEpisode(BREAKING_BAD_SERIES_ID, 5, 3, LANGUAGE_ENGLISH);
 

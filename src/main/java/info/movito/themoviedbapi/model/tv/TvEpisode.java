@@ -1,18 +1,20 @@
 package info.movito.themoviedbapi.model.tv;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.ToString;
 
-
+@ToString
 public class TvEpisode extends AbstractTvElement {
 
 
     @JsonProperty("overview")
     private String overview;
 
+    @JsonProperty("name")
+    private String episodeName;
 
     @JsonProperty("air_date")
     private String airDate;
-
 
     @JsonProperty("show_id")
     private int seriesId;
@@ -28,7 +30,6 @@ public class TvEpisode extends AbstractTvElement {
 
     @JsonProperty("rating")
     private float userRating;
-
 
     @JsonProperty("vote_average")
     private float voteAverage;
@@ -127,4 +128,13 @@ public class TvEpisode extends AbstractTvElement {
     public void setUserRating(float userRating) {
         this.userRating = userRating;
     }
+
+    public void setEpisodeName(String episodeName) {
+        this.episodeName = episodeName;
+    }
+
+    public String getEpisodeName() {
+        return episodeName;
+    }
+
 }
