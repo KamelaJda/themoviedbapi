@@ -26,6 +26,7 @@ public class TmdbMovies extends AbstractTmdbApi {
     private static final String PARAM_END_DATE = "end_date";
     private static final String PARAM_COUNTRY = "country";
     private static final String PARAM_REGION = "region";
+    private static final String WATCH_PROVIDERS = "watch/providers";
 
 
     // account_states and rating are not included as it wouldn't work anyway because of missing session id
@@ -332,6 +333,12 @@ public class TmdbMovies extends AbstractTmdbApi {
 
 
         return mapJsonResult(apiUrl, MovieResultsPage.class);
+    }
+
+    public WatchProvider getWatchProviders(int tvId) {
+        ApiUrl apiUrl = new ApiUrl(TMDB_METHOD_MOVIE, tvId, WATCH_PROVIDERS);
+
+        return mapJsonResult(apiUrl, WatchProvider.class);
     }
 
 

@@ -3,6 +3,7 @@ package info.movito.themoviedbapi;
 import info.movito.themoviedbapi.model.ContentRating;
 import info.movito.themoviedbapi.model.Credits;
 import info.movito.themoviedbapi.model.MovieImages;
+import info.movito.themoviedbapi.model.WatchProvider;
 import info.movito.themoviedbapi.model.config.Timezone;
 import info.movito.themoviedbapi.model.core.TvKeywords;
 import info.movito.themoviedbapi.model.tv.TvSeries;
@@ -22,6 +23,7 @@ public class TmdbTV extends AbstractTmdbApi {
     public static final String TMDB_METHOD_TOPRATED = "top_rated";
     public static final String TMDB_METHOD_RECOMMENDATIONS = "recommendations";
     public static final String TMDB_METHOD_KEYWORDS = "keywords";
+    public static final String TMDB_METHOD_WATCH_PROVIDERS = "watch/providers";
 
 
     public static enum TvMethod {credits, external_ids, images, videos, recommendations, keywords, content_ratings}
@@ -124,4 +126,11 @@ public class TmdbTV extends AbstractTmdbApi {
 
         return mapJsonResult(apiUrl, ContentRating.Results.class);
     }
+
+    public WatchProvider getWatchProviders(int tvId) {
+        ApiUrl apiUrl = new ApiUrl(TMDB_METHOD_TV, tvId, TMDB_METHOD_WATCH_PROVIDERS);
+
+        return mapJsonResult(apiUrl, WatchProvider.class);
+    }
+
 }
