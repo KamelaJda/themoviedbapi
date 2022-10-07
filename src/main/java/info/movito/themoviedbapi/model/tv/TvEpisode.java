@@ -35,6 +35,9 @@ public class TvEpisode extends AbstractTvElement {
     @JsonProperty("vote_count")
     private int voteCount;
 
+    @JsonProperty("runtime")
+    private long runtime;
+
 
     public String getOverview() {
         return overview;
