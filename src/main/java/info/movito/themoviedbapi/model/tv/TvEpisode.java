@@ -138,4 +138,8 @@ public class TvEpisode extends AbstractTvElement {
         return episodeName;
     }
 
+    public long getRuntime() {
+        return runtime;
+    }
+
 }
