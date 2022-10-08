@@ -42,8 +42,8 @@ public class MovieDb extends IdElement implements Multi {
     @JsonProperty("budget")
     private long budget;
 
-    @JsonProperty("genres")
-    private List<Genre> genres;
+    @JsonProperty("genre_ids")
+    private List<Integer> genres;
 
     @JsonProperty("homepage")
     private String homepage;
@@ -169,7 +169,7 @@ public class MovieDb extends IdElement implements Multi {
     }
 
 
-    public List<Genre> getGenres() {
+    public List<Integer> getGenres() {
         return genres;
     }
 
@@ -360,11 +360,6 @@ public class MovieDb extends IdElement implements Multi {
 
     public void setBudget(long budget) {
         this.budget = budget;
-    }
-
-
-    public void setGenres(List<Genre> genres) {
-        this.genres = genres;
     }
 
 

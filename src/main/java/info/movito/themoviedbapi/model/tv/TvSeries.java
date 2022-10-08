@@ -30,8 +30,8 @@ public class TvSeries extends AbstractTvElement implements Multi {
     @JsonProperty("last_air_date")
     private String lastAirDate;
 
-    @JsonProperty("genres")
-    private List<Genre> genres;
+    @JsonProperty("genre_ids")
+    private List<Integer> genres;
 
     @JsonProperty("homepage")
     private String homepage;
@@ -111,7 +111,7 @@ public class TvSeries extends AbstractTvElement implements Multi {
     }
 
 
-    public List<Genre> getGenres() {
+    public List<Integer> getGenres() {
         return genres;
     }
 
@@ -230,11 +230,6 @@ public class TvSeries extends AbstractTvElement implements Multi {
 
     public void setLastAirDate(String lastAirDate) {
         this.lastAirDate = lastAirDate;
-    }
-
-
-    public void setGenres(List<Genre> genres) {
-        this.genres = genres;
     }
 
 
